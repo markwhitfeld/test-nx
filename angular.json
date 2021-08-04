@@ -201,6 +201,47 @@
           }
         }
       }
+    },
+    "shared-other": {
+      "projectType": "library",
+      "root": "libs/shared/other",
+      "sourceRoot": "libs/shared/other/src",
+      "prefix": "test-nx",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/shared/other"],
+          "options": {
+            "project": "libs/shared/other/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/other/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/other/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/other"],
+          "options": {
+            "jestConfig": "libs/shared/other/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/other/src/**/*.ts",
+              "libs/shared/other/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

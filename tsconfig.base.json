@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@test-nx/shared": ["libs/shared/src/index.ts"],
-      "@test-nx/shared/models": ["libs/shared/models/src/index.ts"]
+      "@test-nx/shared/models": ["libs/shared/models/src/index.ts"],
+      "@test-nx/shared/other": ["libs/shared/other/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
